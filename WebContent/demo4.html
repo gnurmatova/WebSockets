@@ -6,7 +6,7 @@
 </head>
 <body>
 	<script type="text/javascript">
-		var wsUri = "ws://unhsockets.herokuapp.com/demo4";
+		var wsUri = "wss://unhsockets.herokuapp.com/demo4";
 		websocket = new WebSocket(wsUri);
 		websocket.onopen = function() {
 			$("#js").append("Connection Established<br/>");
