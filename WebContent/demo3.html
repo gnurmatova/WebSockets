@@ -1,6 +1,6 @@
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Demo3 WebSocket</title>
 <script>
@@ -9,7 +9,7 @@
 				websocket = null;
 				$("#wsbtn").click(
 						function() {
-							var wsUri = "ws://localhost:8080/WebSockets/demo3/"
+							var wsUri = "wss://unhsockets.herokuapp.com/demo3/"
 									+ $("#wsname").val();
 							websocket = new WebSocket(wsUri);
 							websocket.onopen = function() {

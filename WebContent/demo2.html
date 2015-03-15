@@ -1,6 +1,6 @@
 <html>
 <head>
-<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <title>Demo2 WebSocket</title>
 <script>
@@ -13,7 +13,7 @@ $(document).ready(function(){
 </head>
 <body>
 	<script type="text/javascript">
-		var wsUri = "ws://localhost:8080/WebSockets/demo2";
+		var wsUri = "wss://unhsockets.herokuapp.com/demo2";
 		websocket = new WebSocket(wsUri);
 		websocket.onopen = function() {
 			$("#js").append("Connection Established<br/>");
