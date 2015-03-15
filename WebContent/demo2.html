@@ -1,0 +1,37 @@
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>Demo2 WebSocket</title>
+<script>
+$(document).ready(function(){
+    $("#wsbutton").click(function(){
+       websocket.send($("#wsmessage").val());
+    });
+});
+</script>
+</head>
+<body>
+	<script type="text/javascript">
+		var wsUri = "ws://localhost:8080/WebSockets/demo2";
+		websocket = new WebSocket(wsUri);
+		websocket.onopen = function() {
+			$("#js").append("Connection Established<br/>");
+		};
+		websocket.onmessage = function(event) {
+			$("#js").append("Message Received <br/>");
+			$("#messages").append(event.data+"<br/>");
+		};
+		websocket.onclose = function() {
+			$("#js").append("Connection Closed <br/>");
+		};
+		websocket.onerror = function() {
+			$("#js").append("An Error has occurred <br/>");
+		};
+	</script>
+	<h3>Chat with Server:</h3>
+	<div id="messages"></div>
+	<input type="text" id="wsmessage"/>
+	<input type="button" value="send" id="wsbutton"/>
+</body>
+</html>
